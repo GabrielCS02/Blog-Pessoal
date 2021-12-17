@@ -43,7 +43,7 @@ Obrigado a todos que contribuiram para o desenvolvimento desse projeto, é uma g
 
 ## 👨‍💼 Desenvolvedor
 
-<a href="https://github.com/ymilharal">
+<a href="https://github.com/GabrielCS02">
  <img style="border-radius: 70%;" src="https://imgur.com/vaaabgQ.jpg" width="200px;" alt=""/>
  <br />
  <sub><b>Gabriel Costa</b></sub></a> <a href="https://github.com/GabrielCS02" title="GabrielCosta">🐐</a>
