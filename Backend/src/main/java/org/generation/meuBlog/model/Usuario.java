@@ -27,14 +27,14 @@ public class Usuario {
 	@Size(min = 2, max = 110)
 	private String nome;
 	
-	@NotBlank
+	
 	@Email
 	@Size(min = 5, max = 110)
 	private String usuario;
 	
 	
 	@NotBlank
-	@Size(min = 6, max = 80)
+	@Size(min = 6, max = 255)
 	private String senha;
 
 	private String foto;
@@ -53,6 +53,11 @@ public class Usuario {
 		this.senha = senha;
 		this.foto = foto;
 	}
+
+	
+
+	public Usuario() {}
+
 
 
 	public long getId() {

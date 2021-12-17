@@ -26,13 +26,13 @@ public class UsuarioRepositoryTest {
 	@BeforeAll
 	void start(){
 
-		usuarioRepository.save(new Usuario(0L, "Gabriel Costa", "gabriel@email.com.br", "13465278","https://imgur.com/gallery/TZvVaVq"));
+		usuarioRepository.save(new Usuario(0L, "Gabriel Costa", "gabriel@email.com", "13465278","https://imgur.com/gallery/TZvVaVq"));
 		
 		usuarioRepository.save(new Usuario(0L, "Adelvan Costa", "adelvan@email.com.br", "13465278","https://imgur.com/gallery/YOY0S"));
 		
-		usuarioRepository.save(new Usuario(0L, "Mariana de Pereira Costa", "mariana@email.com.br", "13465278","https://imgur.com/gallery/tRTUtkg"));
+		usuarioRepository.save(new Usuario(0L, "Mariana de Pereira Costa", "mariana@email.com", "13465278","https://imgur.com/gallery/tRTUtkg"));
 
-        usuarioRepository.save(new Usuario(0L, "Paulo Antunes", "paulo@email.com.br", "13465278","https://imgur.com/gallery/TOgPJwH"));
+        usuarioRepository.save(new Usuario(0L, "Paulo Antunes", "paulo@email.com", "13465278","https://imgur.com/gallery/TOgPJwH"));
 
 	}
 
@@ -40,7 +40,7 @@ public class UsuarioRepositoryTest {
 	@DisplayName("Retorna 1 usuario")
 	public void deveRetornarUmUsuario() {
 
-		Optional<Usuario> usuario = usuarioRepository.findByUsuario("adelvan@email.com.br");
+		Optional<Usuario>usuario=usuarioRepository.findByUsuario("adelvan@email.com.br");
 		assertTrue(usuario.get().getUsuario().equals("adelvan@email.com.br"));
 	}
 
@@ -48,7 +48,7 @@ public class UsuarioRepositoryTest {
 	@DisplayName("Retorna 3 usuarios")
 	public void deveRetornarTresUsuarios() {
 
-		List<Usuario> listaDeUsuarios = usuarioRepository.findAllByNomeContainingIgnoreCase("Costa");
+		List<Usuario>listaDeUsuarios= usuarioRepository.findAllByNomeContainingIgnoreCase("costa");
 		assertEquals(3, listaDeUsuarios.size());
 		assertTrue(listaDeUsuarios.get(0).getNome().equals("Gabriel Costa"));
 		assertTrue(listaDeUsuarios.get(1).getNome().equals("Adelvan Costa"));

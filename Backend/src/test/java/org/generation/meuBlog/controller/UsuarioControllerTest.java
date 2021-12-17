@@ -39,7 +39,7 @@ public class UsuarioControllerTest {
 	public void deveCriarUmUsuario() {
 
 		HttpEntity<Usuario> requisicao = new HttpEntity<Usuario>(
-				new Usuario(0L, "Paulo Antunes", "paulo_antunes@email.com.br", "13465278",""));
+				new Usuario(0L, "Paulo Antunes", "paulo_antunes@email.com", "13465278",""));
 
 		ResponseEntity<Usuario> resposta = testRestTemplate.exchange("/usuarios/cadastrar", HttpMethod.POST, requisicao,
 				Usuario.class);
@@ -54,10 +54,10 @@ public class UsuarioControllerTest {
 	@DisplayName("Não deve permitir duplicação do Usuário")
 	public void naoDeveDuplicarUsuario() {
 
-		usuarioService.cadastrarUsuario(new Usuario(0L, "Maria da Silva", "maria_silva@email.com.br", "13465278",""));
+		usuarioService.cadastrarUsuario(new Usuario(0L, "Maria da Silva", "maria_silva@email.com.br", "13465278","sem foto"));
 
 		HttpEntity<Usuario> requisicao = new HttpEntity<Usuario>(
-				new Usuario(0L, "Maria da Silva", "maria_silva@email.com.br", "13465278",""));
+				new Usuario(0L, "Maria da Silva", "maria_silva@email.com.br", "13465278","sem foto"));
 
 		ResponseEntity<Usuario> resposta = testRestTemplate.exchange("/usuarios/cadastrar", HttpMethod.POST, requisicao,
 				Usuario.class);
@@ -71,10 +71,10 @@ public class UsuarioControllerTest {
 	public void deveAtualizarUmUsuario() {
 
 		Optional<Usuario> usuarioCreate = usuarioService
-				.cadastrarUsuario(new Usuario(0L, "Juliana Andrews", "juliana_andrews@email.com.br", "juliana123",""));
+				.cadastrarUsuario(new Usuario(0L, "Juliana Andrews", "juliana_andrews@email.com.br", "juliana123","sem foto"));
 
 		Usuario usuarioUpdate = new Usuario(usuarioCreate.get().getId(), "Juliana Andrews Ramos",
-				"juliana_ramos@email.com.br", "juliana123","");
+				"juliana_ramos@email.com.br", "juliana123","sem foto");
 
 		HttpEntity<Usuario> requisicao = new HttpEntity<Usuario>(usuarioUpdate);
 
