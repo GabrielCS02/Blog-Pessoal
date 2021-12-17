@@ -11,9 +11,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 
 @Entity
 @Table(name = "tb_usuario")
@@ -27,14 +30,14 @@ public class Usuario {
 	@Size(min = 2, max = 110)
 	private String nome;
 	
-	
-	@Email
-	@Size(min = 5, max = 110)
+	@Schema(example = "email@email.com.br!")
+	@NotNull(message= "O atributo Usuário é Obrigatório!")
+	@Email(message = "O atributo Usuário deve ser um email válido!")
 	private String usuario;
 	
 	
-	@NotBlank
-	@Size(min = 6, max = 255)
+	@NotBlank(message = "O atributo senha não pode estar vazio!")
+	@Size(min = 6, max = 255, message = "O atributo senha deve conter um mínimo de 6 caracteres!")
 	private String senha;
 
 	private String foto;
