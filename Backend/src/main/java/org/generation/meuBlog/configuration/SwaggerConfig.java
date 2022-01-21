@@ -21,7 +21,7 @@ public class SwaggerConfig {
 		return new OpenAPI()
 				.info(new Info()
 						.title("Projeto Blog Pessoal")
-						.description("Projeto Blog Pessoa - Generation Brasil")
+						.description("Projeto Blog Pessoal - Generation Brasil")
 						.version("v0.0.1")
 	            .license(new License()
 	            		.name("generation.org.br")
