@@ -28,7 +28,7 @@ public class SwaggerConfig {
 	            		.url("http://springdoc.org"))
 	    		.contact(new Contact()
 	    				.name("Gabriel Costa Silva")
-	    			  	.url("hhttps://github.com/GabrielCS02")
+	    			  	.url("https://github.com/GabrielCS02")
 	                  	.email("gacosil0204@gmail.com")))
 	    		.externalDocs(new ExternalDocumentation()
 	    				.description("Github")
